@@ -10,27 +10,37 @@ class Skybox extends THREE.Object3D {
     super();
 
     this.lenghtxz = 1000;
-    this.heighty = 500;
+    this.heighty = 1000;
 
     this.skybox = null;
 
     var geometry = new THREE.BoxGeometry(this.lenghtxz, this.heighty, this.lenghtxz);
 
-    var loader = new THREE.TextureLoader();
 
-    var material = [];
-    material.push(new THREE.MeshBasicMaterial({ map: loader.load("../assets/img/Skybox/ft.JPG"), side: THREE.BackSide }));
-    material.push(new THREE.MeshBasicMaterial({ map: loader.load("../assets/img/Skybox/bk.JPG"), side: THREE.BackSide }));
-    material.push(new THREE.MeshBasicMaterial({ map: loader.load("../assets/img/Skybox/up.JPG"), side: THREE.BackSide }));
-    material.push(new THREE.MeshBasicMaterial({ map: loader.load("../assets/img/Skybox/dn.JPG"), side: THREE.BackSide }));
-    material.push(new THREE.MeshBasicMaterial({ map: loader.load("../assets/img/Skybox/rt.JPG"), side: THREE.BackSide }));
-    material.push(new THREE.MeshBasicMaterial({ map: loader.load("../assets/img/Skybox/lf.JPG"), side: THREE.BackSide }));
+    const material = this._getMaterial('../assets/img/skybox/yokohoma/');
+
 
     this.skybox = new THREE.Mesh(geometry, material);
 
     this.skybox.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0, 0));
-
     this.add(this.skybox);
+
+  }
+
+
+
+  _getMaterial(skyboxDir) {
+    const loader = new THREE.TextureLoader();
+    const pushMat = (image) => new THREE.MeshBasicMaterial({ map: loader.load(skyboxDir + image + ".jpg"), side: THREE.BackSide });
+
+    return [
+      pushMat('front'),
+      pushMat('back'),
+      pushMat('top'),
+      pushMat('down'),
+      pushMat('right'),
+      pushMat('left')
+    ];
   }
 
 }
