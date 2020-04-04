@@ -1,0 +1,19 @@
+{
+  "name": "first-person-shooter-js",
+  "version": "1.0.0",
+  "description": "### A simple FPS game made in JavaScript using THREE.js, Physijs... with the purpose of learning a little bit of these libraries",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berkozturkdev/First-Person-Shooter-JS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/berkozturkdev/First-Person-Shooter-JS/issues"
+  },
+  "homepage": "https://github.com/berkozturkdev/First-Person-Shooter-JS#readme"
+}
