@@ -19,7 +19,6 @@ class Avatar {
         this.activeWeapon = null;
         this.goingUp = true;
         this.recoil = true;
-        this.posLimite = 82;
         this.shotgun = null;
         this.rifle = null;
 
@@ -61,41 +60,33 @@ class Avatar {
     moveForward() {
         var target = this.camera.getWorldDirection();
         var nextPosition = target.x + this.avatar.position.x;
-        if (nextPosition <= this.posLimite && nextPosition >= -this.posLimite)
-            this.avatar.translateX(target.x);
+        this.avatar.translateX(target.x);
         nextPosition = target.z + this.avatar.position.z;
-        if (nextPosition <= this.posLimite && nextPosition >= -this.posLimite)
-            this.avatar.translateZ(target.z);
+        this.avatar.translateZ(target.z);
     }
 
     moveBackward() {
         var target = this.camera.getWorldDirection();
         var nextPosition = -target.x + this.avatar.position.x;
-        if (nextPosition <= this.posLimite && nextPosition >= -this.posLimite)
-            this.avatar.translateX(-target.x);
+        this.avatar.translateX(-target.x);
         nextPosition = -target.z + this.avatar.position.z;
-        if (nextPosition <= this.posLimite && nextPosition >= -this.posLimite)
-            this.avatar.translateZ(-target.z);
+        this.avatar.translateZ(-target.z);
     }
 
     moveLeft() {
         var target = this.camera.getWorldDirection();
         var nextPosition = target.z + this.avatar.position.x;
-        if (nextPosition <= this.posLimite && nextPosition >= -this.posLimite)
-            this.avatar.translateX(target.z);
+        this.avatar.translateX(target.z);
         nextPosition = -target.x + this.avatar.position.z;
-        if (nextPosition <= this.posLimite && nextPosition >= -this.posLimite)
-            this.avatar.translateZ(-target.x);
+        this.avatar.translateZ(-target.x);
     }
 
     moveRight() {
         var target = this.camera.getWorldDirection();
         var nextPosition = -target.z + this.avatar.position.x;
-        if (nextPosition <= this.posLimite && nextPosition >= -this.posLimite)
-            this.avatar.translateX(-target.z);
+        this.avatar.translateX(-target.z);
         nextPosition = target.x + this.avatar.position.z;
-        if (nextPosition <= this.posLimite && nextPosition >= -this.posLimite)
-            this.avatar.translateZ(target.x);
+        this.avatar.translateZ(target.x);
     }
 
     changeWeapon() {

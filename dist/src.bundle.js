@@ -18,14 +18,14 @@ class Map {
     var mat = Physijs.createMaterial(new THREE.MeshPhongMaterial({ map: texturaMetal }), 0, 0);
     var matBase = Physijs.createMaterial(new THREE.MeshPhongMaterial({ map: texturaBase }), 0, 0);
 
-    var start1 = new Physijs.BoxMesh(new THREE.BoxGeometry(200, 0.0, 200, 1, 1, 1), mat, 0);
-    start1.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0, 0));
-    start1.receiveShadow = true;
-    start1.autoUpdateMatrix = false;
-    this.map.push(start1);
-    ++this.map_size;
+    // var start1 = new Physijs.BoxMesh(new THREE.BoxGeometry(200, 0.0, 200, 1, 1, 1), mat, 0);
+    // start1.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0, 0));
+    // start1.receiveShadow = true;
+    // start1.autoUpdateMatrix = false;
+    // this.map.push(start1);
+    // ++this.map_size;
 
-    var enemies2 = new Physijs.BoxMesh(new THREE.BoxGeometry(210, 4, 400, 1, 1, 1), mat, 0);
+    var enemies2 = new Physijs.BoxMesh(new THREE.BoxGeometry(200, 0.0, 400, 1, 1, 1), mat, 0);
     enemies2.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0, -300));
     enemies2.receiveShadow = true;
     enemies2.autoUpdateMatrix = false;
@@ -39,40 +39,40 @@ class Map {
     this.map.push(bullets3);
     ++this.map_size;
 
-    var fenceS4 = new Physijs.BoxMesh(new THREE.BoxGeometry(220, 8, 20, 1, 1, 1), mat, 0);
-    fenceS4.applyMatrix(new THREE.Matrix4().makeTranslation(0, 2.5, 100));
-    fenceS4.receiveShadow = true;
-    fenceS4.autoUpdateMatrix = false;
-    this.map.push(fenceS4);
-    ++this.map_size;
+    // var fenceS4 = new Physijs.BoxMesh(new THREE.BoxGeometry(220, 8, 20, 1, 1, 1), mat, 0);
+    // fenceS4.applyMatrix(new THREE.Matrix4().makeTranslation(0, 2.5, 100));
+    // fenceS4.receiveShadow = true;
+    // fenceS4.autoUpdateMatrix = false;
+    // this.map.push(fenceS4);
+    // ++this.map_size;
 
-    var fenceE5 = new Physijs.BoxMesh(new THREE.BoxGeometry(20, 8, 200, 1, 1, 1), mat, 0);
-    fenceE5.applyMatrix(new THREE.Matrix4().makeTranslation(100, 2.5, 0));
-    fenceE5.receiveShadow = true;
-    fenceE5.autoUpdateMatrix = false;
-    this.map.push(fenceE5);
-    ++this.map_size;
+    // var fenceE5 = new Physijs.BoxMesh(new THREE.BoxGeometry(20, 8, 200, 1, 1, 1), mat, 0);
+    // fenceE5.applyMatrix(new THREE.Matrix4().makeTranslation(100, 2.5, 0));
+    // fenceE5.receiveShadow = true;
+    // fenceE5.autoUpdateMatrix = false;
+    // this.map.push(fenceE5);
+    // ++this.map_size;
 
-    var fenceW6 = new Physijs.BoxMesh(new THREE.BoxGeometry(20, 8, 200, 1, 1, 1), mat, 0);
-    fenceW6.applyMatrix(new THREE.Matrix4().makeTranslation(-100, 2.5, 0));
-    fenceW6.receiveShadow = true;
-    fenceW6.autoUpdateMatrix = false;
-    this.map.push(fenceW6);
-    ++this.map_size;
+    // var fenceW6 = new Physijs.BoxMesh(new THREE.BoxGeometry(20, 8, 200, 1, 1, 1), mat, 0);
+    // fenceW6.applyMatrix(new THREE.Matrix4().makeTranslation(-100, 2.5, 0));
+    // fenceW6.receiveShadow = true;
+    // fenceW6.autoUpdateMatrix = false;
+    // this.map.push(fenceW6);
+    // ++this.map_size;
 
-    var fenceN7 = new Physijs.BoxMesh(new THREE.BoxGeometry(220, 4, 8, 1, 1, 1), mat, 0);
-    fenceN7.applyMatrix(new THREE.Matrix4().makeTranslation(0, 2.5, -96));
-    fenceN7.receiveShadow = true;
-    fenceN7.autoUpdateMatrix = false;
-    this.map.push(fenceN7);
-    ++this.map_size;
+    // var fenceN7 = new Physijs.BoxMesh(new THREE.BoxGeometry(220, 4, 8, 1, 1, 1), mat, 0);
+    // fenceN7.applyMatrix(new THREE.Matrix4().makeTranslation(0, 2.5, -96));
+    // fenceN7.receiveShadow = true;
+    // fenceN7.autoUpdateMatrix = false;
+    // this.map.push(fenceN7);
+    // ++this.map_size;
 
-    var mountain = new Physijs.CylinderMesh(new THREE.CylinderGeometry(50, 500, 50, 10, 10), matBase, 0);
-    mountain.applyMatrix(new THREE.Matrix4().makeTranslation(0, -40, -50));
-    mountain.receiveShadow = true;
-    mountain.autoUpdateMatrix = false;
-    this.map.push(mountain);
-    ++this.map_size;
+    // var mountain = new Physijs.CylinderMesh(new THREE.CylinderGeometry(50, 500, 50, 10, 10), matBase, 0);
+    // mountain.applyMatrix(new THREE.Matrix4().makeTranslation(0, -40, -50));
+    // mountain.receiveShadow = true;
+    // mountain.autoUpdateMatrix = false;
+    // this.map.push(mountain);
+    // ++this.map_size;
 
 
     return this;
@@ -245,12 +245,8 @@ class Skybox extends THREE.Object3D {
     this.lenghtxz = 1000;
     this.heighty = 1000;
 
-    this.skybox = null;
-
-    var geometry = new THREE.BoxGeometry(this.lenghtxz, this.heighty, this.lenghtxz);
-
-
-    const material = this._getMaterial('../assets/img/skybox/yokohoma/');
+    const geometry = new THREE.BoxGeometry(this.lenghtxz, this.heighty, this.lenghtxz);
+    const material = this._getMaterial('../assets/img/skybox/classic/');
 
 
     this.skybox = new THREE.Mesh(geometry, material);
@@ -260,19 +256,17 @@ class Skybox extends THREE.Object3D {
 
   }
 
-
-
   _getMaterial(skyboxDir) {
     const loader = new THREE.TextureLoader();
-    const pushMat = (image) => new THREE.MeshBasicMaterial({ map: loader.load(skyboxDir + image + ".jpg"), side: THREE.BackSide });
+    const newMaterial = (image) => new THREE.MeshBasicMaterial({ map: loader.load(skyboxDir + image + ".jpg"), side: THREE.BackSide });
 
     return [
-      pushMat('front'),
-      pushMat('back'),
-      pushMat('top'),
-      pushMat('down'),
-      pushMat('right'),
-      pushMat('left')
+      newMaterial('front'),
+      newMaterial('back'),
+      newMaterial('top'),
+      newMaterial('down'),
+      newMaterial('right'),
+      newMaterial('left')
     ];
   }
 
@@ -366,7 +360,6 @@ class Avatar {
         this.activeWeapon = null;
         this.goingUp = true;
         this.recoil = true;
-        this.posLimite = 82;
         this.shotgun = null;
         this.rifle = null;
 
@@ -408,41 +401,33 @@ class Avatar {
     moveForward() {
         var target = this.camera.getWorldDirection();
         var nextPosition = target.x + this.avatar.position.x;
-        if (nextPosition <= this.posLimite && nextPosition >= -this.posLimite)
-            this.avatar.translateX(target.x);
+        this.avatar.translateX(target.x);
         nextPosition = target.z + this.avatar.position.z;
-        if (nextPosition <= this.posLimite && nextPosition >= -this.posLimite)
-            this.avatar.translateZ(target.z);
+        this.avatar.translateZ(target.z);
     }
 
     moveBackward() {
         var target = this.camera.getWorldDirection();
         var nextPosition = -target.x + this.avatar.position.x;
-        if (nextPosition <= this.posLimite && nextPosition >= -this.posLimite)
-            this.avatar.translateX(-target.x);
+        this.avatar.translateX(-target.x);
         nextPosition = -target.z + this.avatar.position.z;
-        if (nextPosition <= this.posLimite && nextPosition >= -this.posLimite)
-            this.avatar.translateZ(-target.z);
+        this.avatar.translateZ(-target.z);
     }
 
     moveLeft() {
         var target = this.camera.getWorldDirection();
         var nextPosition = target.z + this.avatar.position.x;
-        if (nextPosition <= this.posLimite && nextPosition >= -this.posLimite)
-            this.avatar.translateX(target.z);
+        this.avatar.translateX(target.z);
         nextPosition = -target.x + this.avatar.position.z;
-        if (nextPosition <= this.posLimite && nextPosition >= -this.posLimite)
-            this.avatar.translateZ(-target.x);
+        this.avatar.translateZ(-target.x);
     }
 
     moveRight() {
         var target = this.camera.getWorldDirection();
         var nextPosition = -target.z + this.avatar.position.x;
-        if (nextPosition <= this.posLimite && nextPosition >= -this.posLimite)
-            this.avatar.translateX(-target.z);
+        this.avatar.translateX(-target.z);
         nextPosition = target.x + this.avatar.position.z;
-        if (nextPosition <= this.posLimite && nextPosition >= -this.posLimite)
-            this.avatar.translateZ(target.x);
+        this.avatar.translateZ(target.x);
     }
 
     changeWeapon() {
